@@ -10,9 +10,20 @@
   <div class="container">
     <h1>The House on Bit Street</h1>
     <p>You play as <strong>Eren</strong>, a boy searching for his missing best friend <strong>Emma</strong>.</p>
-    <button onclick="startGame()">Enter the House</button>
+    <button id="startBtn">Enter the House</button>
     <canvas id="gameCanvas" width="480" height="320"></canvas>
   </div>
   <script src="game.js"></script>
+  <script>
+    // Attach button handler after DOM is ready
+    document.getElementById("startBtn").addEventListener("click", () => {
+      if (typeof startGame === "function") {
+        startGame();
+      } else {
+        alert("Game script not loaded!");
+      }
+    });
+  </script>
 </body>
 </html>
+
